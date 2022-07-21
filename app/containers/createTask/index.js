@@ -22,7 +22,7 @@ function CreateTask() {
         icon: 'success',
         title: successToastTitle({ name: 'Task', isUpdated: false }),
       });
-      navigateTo(history, '/link-categories');
+      navigateTo(history, '/home');
       queryClient.invalidateQueries(keys.linkCategory);
     },
     onError: ({

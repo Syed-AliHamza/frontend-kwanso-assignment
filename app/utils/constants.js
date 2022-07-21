@@ -145,6 +145,7 @@ export const CKEDITOR_CUSTOM_CONFIG = {
 export const POLL_OPTIONS_LIMIT = 4;
 
 export const APIS = {
+  LOGIN: '/users/login',
   TASKS: '/tasks',
 };
 export const FEATURES = {
