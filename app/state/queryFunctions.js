@@ -11,3 +11,5 @@ export const getTasks = () => {
 
 export const deleteTask = (payload) =>
   http.delete(TASKS, { data: { id: payload } });
+
+export const createTask = (payload) => http.post(`${TASKS}/create`, payload);

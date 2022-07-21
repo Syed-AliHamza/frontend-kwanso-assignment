@@ -6,7 +6,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add';
 import { useQuery } from 'react-query';
 import { useHistory } from 'react-router-dom';
-import { Button, DataGrid } from '../../components';
+import { Button, DataGrid, H5 } from '../../components';
 import { keys } from '../../state/queryKeys';
 import { getTasks } from '../../state/queryFunctions';
 import Show from '../../components/show';
@@ -44,8 +44,10 @@ function HomeContainer() {
         <Loading />
       </Show>
       <Show IF={!isLoading}>
-        <Box m={20} my={20}>
-          <Box display="flex">
+        <Box m={15} my={15}>
+          <H5>Tasks</H5>
+
+          <Box display="flex" mt={5}>
             <Button
               color="secondary"
               variant="contained"
