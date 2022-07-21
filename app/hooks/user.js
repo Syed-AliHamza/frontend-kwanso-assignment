@@ -3,8 +3,6 @@ import Swal from 'sweetalert2';
 import { deleteUser, fetchUsers } from '../state/queryFunctions';
 import { keys } from '../state/queryKeys';
 import { Toast, isFunction, errorToastTitle } from '../utils/helper';
-import { usePermission } from './permission';
-import { FEATURES, PERMISSIONS } from '../utils/constants';
 
 export function useDeleteUser({ callbackFn } = {}) {
   const queryClient = useQueryClient();
@@ -32,10 +30,6 @@ export function useDeleteUser({ callbackFn } = {}) {
 }
 
 export function useFetchUser({ params, callbackFn, isFilter = false } = {}) {
-  const isReadAllowed = usePermission(
-    `${FEATURES.DIRECTORY}-${PERMISSIONS.READ}`
-  );
-
   return useQuery(
     keys.getUsers({
       ...params,
@@ -43,7 +37,6 @@ export function useFetchUser({ params, callbackFn, isFilter = false } = {}) {
     fetchUsers,
     {
       keepPreviousData: true,
-      enabled: isReadAllowed,
       onSuccess: ({
         data: {
           data: { rows },

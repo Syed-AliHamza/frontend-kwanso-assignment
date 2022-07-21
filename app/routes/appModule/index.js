@@ -1,12 +1,6 @@
-import { centralPointRouteArray } from './centralPointRouteArray';
-import { educationRouteArray } from './educationRouteArray';
-import { unauthorizedRouteArray } from './unauthorizedRouteArray';
+import { routeList } from './centralPointRouteArray';
 
 export function AppModuleRoute() {
-  const routeArray = [
-    ...centralPointRouteArray,
-    ...educationRouteArray,
-    ...unauthorizedRouteArray,
-  ];
+  const routeArray = [...routeList];
   return routeArray;
 }
