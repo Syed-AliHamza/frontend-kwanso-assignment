@@ -9,4 +9,11 @@ export const routeList = [
     breadCrumbKey: 'login',
     routeType: routeTypes.public,
   },
+  {
+    path: '/createTask',
+    component: Home,
+    exact: true,
+    breadCrumbKey: 'login',
+    routeType: routeTypes.public,
+  },
 ];
